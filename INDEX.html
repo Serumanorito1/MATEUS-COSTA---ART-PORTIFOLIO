@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mateus Costa Pereira's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Quicksand:wght@400;500&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      transition: background-image 1s ease-in-out;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: black;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: black;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color 0.3s, transform 0.3s;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    nav button:hover {
+      color: #ccc;
+      transform: scale(1.1);
+    }
+
+    .content {
+      position: absolute;
+      top: 130px;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+    }
+
+    section {
+      display: none;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    }
+
+    section.active {
+      display: block;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: transparent;
+      background-image: url('imagem4.png');
+      background-size: cover;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    section p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      color: white;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 1rem;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .video-grid iframe {
+      width: 100%;
+      height: 315px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .video-grid iframe.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .artwork-line {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .artwork-line img {
+      width: 250px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.9;
+    }
+
+    .artwork-line img:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .artwork-line p {
+      flex: 1;
+      font-size: 1rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="LOGO.png" alt="Logo" />
+      <h1>Artist Portfolio</h1>
+    </div>
+    <nav>
+      <button onclick="showSection('Home')">Home</button>
+      <button onclick="showSection('about')">About Me</button>
+      <button onclick="showSection('animations')">Animations</button>
+      <button onclick="showSection('artworks')">Artworks</button>
+      <button onclick="showSection('contact')">Contact Me</button>
+    </nav>
+  </header>
+
+  <div class="content">
+    <section id="Home" class="active">
+      <h2 class="fade-in">Welcome to my portfolio</h2>
+      <p class="fade-in">"Welcome! My name is Mateus, and this portfolio was created with the sole purpose of showcasing my skills as an artist and potentially future animator. Most of my physical artworks were lost over time, so this portfolio will be almost entirely focused on digital art!"</p>
+    </section>
+
+    <section id="about">
+      <h2 class="fade-in">About Me</h2>
+      <p class="fade-in">
+        I'm Mateus, 17 years old, currently in my final year of secondary school at Escola Avelar Brotero. I discovered a deep passion for art at the age of 12 and have been pursuing the dream of becoming an artist ever since. Art has always been my natural way of expressing myself, and over time, it became not just a hobby, but a life path.
+      </p>
+      <p class="fade-in">
+        My greatest inspirations come from online artists, especially Brazilians like <strong>Saiko</strong>, <strong>Drawn Mask</strong>, and <strong>Nerdzito</strong>, who showed me how it's possible to transform creative ideas into powerful visual narratives. Internationally, artists like <strong>Hayao Miyazaki</strong>, master of colorful and sensitive animation, and <strong>Yusuke Murata</strong>, known for his detailed and monochromatic scenes, shaped two extremes that fascinate me: the vibrant and the restrained, chaos and calm — and I try to explore this duality in my works.
+      </p>
+      <p class="fade-in">
+        My artistic signature — <strong>Serumano</strong> or <strong>Serumas</strong> — holds personal meaning. I used this nickname in my early teens with friends, and although I no longer use it daily, I decided to keep it alive in my works as a tribute to that important phase of my life.
+      </p>
+    </section>
+
+    <section id="animations">
+      <h2 class="fade-in">Animations</h2>
+      <div class="video-grid">
+        <iframe src="https://www.youtube.com/embed/U2qWCkinQT8" title="Video 1" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/_hlRTWXx4No" title="Video 2" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/WDrguYa36kk" title="Video 3" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MO5aZi6tY_s" title="Video 4" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/cW2jZqkbVXo" title="Video 5" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/1CT_npwphxM" title="Video 6" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+<!-- Substitua apenas a parte abaixo dentro da section id="artworks" -->
+<section id="artworks">
+  <h2 class="fade-in">Artworks</h2>
+  <p class="fade-in">Each image carries a story, a step in my evolution. Here are a few:</p>
+  <div>
+    <div class="artwork-line fade-in">
+      <img src="1.png" alt="Artwork 1">
+      <p>"One of my first drawings, made when I was 11 years old."</p>
+    </div>
+    <div class="artwork-line fade-in" style="flex-direction: row-reverse;">
+      <img src="2.png" alt="Artwork 2">
+      <p>"My first true digital art, from 2020."</p>
+    </div>
+    <div class="artwork-line fade-in">
+      <img src="3.png" alt="Artwork 3">
+      <p>"An evolution, discovering Photoshop as a drawing tool."</p>
+    </div>
+    <div class="artwork-line fade-in" style="flex-direction: row-reverse;">
+      <img src="4.png" alt="Artwork 4">
+      <p>"I tried to recreate a scene from the intro of 'Scott Pilgrim vs. the World,' but with me and my friends from Brazil!"</p>
+    </div>
+    <div class="artwork-line fade-in">
+      <img src="5.png" alt="Artwork 5">
+      <p>"My own character, from the shoulders up."</p>
+    </div>
+    <div class="artwork-line fade-in" style="flex-direction: row-reverse;">
+      <img src="10.png" alt="Artwork 8">
+      <p>"One of the few traditional works i found. It was purely made with a pencil, a eraser and ink!"</p>
+    </div>
+    <div class="artwork-line fade-in">
+      <img src="7.png" alt="Artwork 7">
+      <p>"An attempt to imitate an anime-style impact frame."</p>
+    </div>
+    <div class="artwork-line fade-in" style="flex-direction: row-reverse;">
+      <img src="8.png" alt="Artwork 8">
+      <p>"My latest artwork! I tried my best to make the artstyle mangakas usually use for their novels."</p>
+    </div>
+  </div>
+</section>
+
+    <section id="contact">
+      <h2 class="fade-in">Contact Me!</h2>
+      <p class="fade-in">Email: seruprojects@gmail.com</p>
+      <p class="fade-in">Instagram: @mateoszinho</p>
+      <p class="fade-in">Tiktok: @mateuoszinho</p>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        target.querySelectorAll('.fade-in').forEach(el => {
+          el.classList.remove('visible');
+          fadeObserver.observe(el);
+        });
+      }
+    }
+
+    let currentBackground = 0;
+    const backgrounds = ['imagem1.png', 'imagem2.png', 'imagem3.png'];
+    let currentTextImage = 0;
+    const textImages = ['imagem4.png', 'imagem5.png', 'imagem6.png'];
+
+    function changeBackground() {
+      currentBackground = (currentBackground + 1) % backgrounds.length;
+      document.body.style.backgroundImage = `url('${backgrounds[currentBackground]}')`;
+      currentTextImage = (currentTextImage + 1) % textImages.length;
+      document.querySelectorAll('section h2').forEach(h2 => {
+        h2.style.backgroundImage = `url('${textImages[currentTextImage]}')`;
+      });
+    }
+    setInterval(changeBackground, 300);
+
+    const iframes = document.querySelectorAll('.video-grid iframe');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    iframes.forEach(iframe => observer.observe(iframe));
+
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  </script>
+</body>
+</html>
